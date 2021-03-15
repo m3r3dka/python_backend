@@ -22,8 +22,10 @@ class InputTest(unittest.TestCase):
 
         self.game.desk[0] = "O"
         self.game.desk[1] = "X"
+        self.game.desk[2] = "X"
         self.assertEqual(self.game.validate_input(1), (False, "Клетка занята, введите другое число"))
         self.assertEqual(self.game.validate_input(2), (False, "Клетка занята, введите другое число"))
+        self.assertEqual(self.game.validate_input(3), (False, "Клетка занята, введите другое число"))
 
     def test_show_board(self):
         self.assertEqual(self.game.desk, [1, 2, 3, 4, 5, 6, 7, 8, 9])
